@@ -18,6 +18,16 @@ sudo cat /var/lib/week1-lab/status
 
 sudo cat /home/lab/.jupyter-token
 
+# On the local machine run:
+aws sts get-caller-identity
+
+aws ssm start-session \
+  --region us-east-1 \
+  --target i-00a69d87fff9983f5 \
+  --document-name AWS-StartPortForwardingSession \
+  --parameters "portNumber=8888,localPortNumber=8888"
+
+http://127.0.0.1:8888/lab
 
 ## Troubleshooting
 
