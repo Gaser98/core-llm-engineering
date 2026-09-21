@@ -258,6 +258,8 @@ resource "aws_instance" "lab" {
     trap 'echo "FAILED at line $LINENO" > /var/lib/week1-lab/status' ERR
     echo INSTALLING > /var/lib/week1-lab/status
     # Asset revision: ${local.notebook_hash}
+    # cloud-init can omit HOME; the Ollama CLI requires it even for remote API calls.
+    export HOME=/root
     export DEBIAN_FRONTEND=noninteractive
     export AWS_DEFAULT_REGION='${var.region}'
     export AWS_PAGER=""
