@@ -11,9 +11,15 @@
 - A private S3 bucket for locally detected notebooks; the instance role can read those objects. Missing notebooks can be uploaded through JupyterLab later.
 - Ollama and JupyterLab systemd services bound to localhost. Startup pulls the selected model, copies the notebooks, updates their `MODEL` setting, and runs a real inference smoke test before recording `READY`.
 
+## Steps
+
+sudo cat /var/lib/week1-lab/status
+sudo cat /home/lab/.jupyter-token
 
 
 ## Troubleshooting
+
+sudo tail -n 100 /var/log/week1-bootstrap.log
 
 - `FAILED ...` in status: inspect `/var/log/week1-bootstrap.log` and `/var/log/cloud-init-output.log`. `terraform apply` does not automatically retry a failed cloud-init installation.
 - No SSM connection: check IAM instance-profile permissions, outbound connectivity, public IPv4, and Session Manager permissions/plugin installation. The selected AMI must include SSM Agent.
