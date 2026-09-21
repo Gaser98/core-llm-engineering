@@ -14,6 +14,8 @@
 ## Steps
 
 sudo cat /var/lib/week1-lab/status
+
+
 sudo cat /home/lab/.jupyter-token
 
 
