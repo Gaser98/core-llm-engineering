@@ -34,6 +34,4 @@ The course section contains 24 lectures totaling about 3 hours 41 minutes. The c
 
 The notebooks are deliberately local-first. They do not reproduce the course's provider keys or paid API calls. They teach the same application patterns using Ollama and a small in-memory database. Use `llama3.2:1b` on a CPU machine; a larger local model generally improves structured actions and prose.
 
-## Course coverage
-
-The summary is based on the visible Week 2 curriculum and lecture titles in the logged-in course page. The project adaptations are original implementations of those patterns, rather than copied course source code.
+ther than copied course source code.
